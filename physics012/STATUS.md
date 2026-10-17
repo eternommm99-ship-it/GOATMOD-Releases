@@ -1,12 +1,29 @@
 # GOATMOD PHYSICS 0.12 — OFFLINE GEOMETRY
 
-Estado de esta rama:
+Estado: PASS (geometría offline).
 
-- Base de trabajo: PHYSICS 0.11 queda intacta.
-- Implementado aquí: geometría limpia de banda/tronera para integrar sobre 0.11.
-- Incluye: límites jugables compensados por radio de bola, primer impacto, punto físico de contacto, reflexión ideal, boca útil de tronera basada en medida de boca, corredor de obstáculos y ruta de una banda por espejo geométrico.
-- La entrada por boca se considera posibilidad geométrica, no embocada garantizada.
-- No implementa todavía potencia, fricción, spin/throw, Autoplay, AutoQueue ni panel.
-- Las pruebas host cubren reflexión horizontal/vertical/oblicua, radio, boca lateral, obstrucción, degenerados, one-bank, rechazo de rebote dentro de boca y simetría izquierda/derecha.
+Validación GitHub Actions run 39043420145:
+- Configure: PASS
+- Build: PASS
+- Test: PASS
 
-Criterio para cerrar la etapa offline: compilar con C++17 y pasar `goatmod_physics012_geometry` sin regresiones antes de integrar en Android.
+Implementado:
+- límites jugables compensados por radio de bola;
+- primer impacto y punto físico de contacto con banda;
+- reflexión horizontal, vertical y oblicua;
+- boca útil de tronera;
+- corredor de obstáculos;
+- ruta de una banda por espejo geométrico;
+- rechazo de rebote dentro de boca;
+- casos degenerados y simetría.
+
+PHYSICS 0.11 queda intacta.
+
+Todavía NO se afirma:
+- integración dentro de GOATMOD-PHYSICS-SOURCE-0.11.zip;
+- APK Android 0.12;
+- validación Samsung;
+- potencia/fricción calibradas;
+- spin/throw.
+
+Próxima etapa: modelo de movimiento rodado + ajuste de potencia/fricción usando trayectorias observadas.
