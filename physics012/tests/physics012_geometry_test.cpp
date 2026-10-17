@@ -76,11 +76,12 @@ void testDegenerateNoCrash() {
 void testOneBankTop() {
     const Rect table{0, 0, 200, 100};
     auto pockets = standardPockets();
-    const auto route = computeOneBankRoute({40, 70}, {160, 70}, Rail::Top, table, 5, pockets);
+    // Bank point lands near x=80, clear of the top side-pocket mouth.
+    const auto route = computeOneBankRoute({30, 70}, {130, 70}, Rail::Top, table, 5, pockets);
     assert(route.valid);
     assert(route.rail == Rail::Top);
     assert(near(route.bankCenter.y, 5));
-    assert(route.bankCenter.x > 40 && route.bankCenter.x < 160);
+    assert(route.bankCenter.x > 30 && route.bankCenter.x < 130);
 }
 
 void testOneBankRejectsPocketMouth() {
