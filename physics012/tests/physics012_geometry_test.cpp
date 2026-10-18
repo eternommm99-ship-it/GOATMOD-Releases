@@ -1,3 +1,6 @@
+#ifdef NDEBUG
+#error "Geometry tests require assertions enabled (NDEBUG must be unset)"
+#endif
 #include "goat/physics012_geometry.h"
 #include <array>
 #include <cassert>
