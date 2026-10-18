@@ -13,8 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Configure
-        run: cmake -S physics012 -B physics012/build -DCMAKE_BUILD_TYPE=Release
+        run: cmake -S physics012 -B physics012/build -DCMAKE_BUILD_TYPE=Debug
       - name: Build
-        run: cmake --build physics012/build --config Release --parallel
+        run: cmake --build physics012/build --config Debug --parallel
       - name: Test
         run: ctest --test-dir physics012/build --output-on-failure
